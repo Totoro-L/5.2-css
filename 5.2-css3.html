@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Totoro-css3</title>
+<style type="text/css">
+.wrapper{
+	overflow: auto;
+}
+.cosmos{
+	height: 630px;
+	width: 400px;
+	background-image: url("image/star.jpg");
+	background-repeat: no-repeat;
+	float:left;
+}
+img{
+	display:inline-block;
+}
+ul{
+	padding:0;
+	margin:0;
+}
+/* 左侧菜单 */
+.menu{
+	width:35px;
+	height:35px;
+	margin:10px;
+}
+.left ul{
+	position:absolute;
+	top:54px;
+	left:8px;
+	height:145px; 
+	width:0; 
+	overflow:hidden;
+	background-color:#339AFF; 
+	-webkit-transition: 0.5s;
+}
+.left li{
+	list-style-position:none;
+	height:28px;
+	text-align:center;
+	color:white;
+	border-bottom:1px solid #ccc;
+	line-height:29px;
+}
+.left li:hover{
+	background-color:blue;
+}
+.left:hover>.menu{
+	cursor:pointer;
+	-webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
+}
+.left:hover>ul{
+	cursor:pointer;
+	width:100px; 
+	overflow:visible;
+}
+/* 地球旋转 */
+.earth{
+	width:200px;
+	height:200px;
+	margin:50px 100px;
+	background-image: url("image/earth.jpg");
+	border-radius:100px;
+	background-size:400px 200px;
+	background-repeat:repeat-x;
+	-webkit-animation: zhuan 5s infinite linear;
+}
+@-webkit-keyframes zhuan{
+	from{background-position:0 0;} 
+	to {background-position:400px 0;}
+}
+.earth:hover{
+	cursor:pointer;
+	-webkit-animation-play-state: paused; 
+}
+/* 上拉提示 */
+@-webkit-keyframes shang{
+	from{opacity:0;margin-top:120px;} 
+	to {opacity:1;margin-top:100px;}
+}
+.up{ 
+	width:50px;
+	height:50px;
+	margin:100px 175px;
+	-webkit-animation: shang 1.5s infinite;
+} 
+.up:hover{
+	cursor:pointer;
+}
+/* 波浪 */
+@-webkit-keyframes bolang{
+	from{background-position:0 200px;} 
+	to {background-position:930px 200px;}
+}
+.wave{
+	width:930px;
+	height:600px;
+	float:left;
+	margin-top:30px;
+	background-image: url("image/wave.jpg");
+	background-size:930px 400px;
+	background-position:0px 200px;
+	background-repeat:repeat-x;
+	-webkit-animation: bolang 10s infinite linear;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="cosmos">
+	<a class="left">
+		<img class="menu" src="image/menu.png"/>
+		<ul>
+			<li>hahaha</li>
+			<li>hahaha</li>
+			<li>hahaha</li>
+			<li>hahaha</li>
+			<li>hahaha</li>
+		</ul>
+	</a>
+	<div class="earth"></div>
+	<div class="towards"><img class="up" src="image/up.png"/><div></div></div>
+</div>
+<div class="wave"></div>
+</div>
+</body>
+</html>
